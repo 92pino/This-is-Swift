@@ -1,6 +1,6 @@
 # This-is-Swift
-> edwith [스탠포드 - Swift를 활용한 iOS11 앱 개발](https://edwith.org/swiftapp/lecture/26619/)에 대한 내용 요약 정리 repo
-> udemy [Instagram Clone App | Swift 4 +Firebase | Push Notifications]에 대한 코드 정리
+> - edwith [스탠포드 - Swift를 활용한 iOS11 앱 개발](https://edwith.org/swiftapp/lecture/26619/)에 대한 내용 요약 정리 repo
+> - udemy [Instagram Clone App | Swift 4 +Firebase | Push Notifications]에 대한 코드 정리
 
 ## Contents
 <!--
