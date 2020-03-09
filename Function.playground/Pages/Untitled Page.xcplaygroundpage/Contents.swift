@@ -1,3 +1,5 @@
+//: [Previous](@previous)
+
 import UIKit
 
 func sayHelloToFriends(me: String, friends names: String...) -> String {
@@ -122,3 +124,5 @@ func say(_ something: String) -> String {
 }
 
 say("Hello")
+
+//: [Next](@next)
