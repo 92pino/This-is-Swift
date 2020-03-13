@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' display-mode='rendered'>
+    <pages>
+        <page name='기본 클로저'/>
+        <page name='후행 클로저'/>
+        <page name='클로저 예시'/>
+        <page name='탈출 클로저'/>
+    </pages>
+</playground>
