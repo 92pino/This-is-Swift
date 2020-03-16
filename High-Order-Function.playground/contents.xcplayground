@@ -3,5 +3,7 @@
     <pages>
         <page name='map'/>
         <page name='filter'/>
+        <page name='reduce'/>
+        <page name='활용'/>
     </pages>
 </playground>
