@@ -46,4 +46,18 @@ yagom2.name = "yagom"
 yagom2.age = 99
 print(yagom2.introduction)
 yagom2.speak()
+
+class Student2: Person {
+    var grade: String = "F"
+    
+    func study() {
+        print("Study hard...")
+    }
+}
+
+let yagom3: Person = Person()
+yagom3.name = "yagom"
+yagom3.age = 99
+print(yagom3.introduction)
+yagom3.speak()
 //: [Next](@next)
