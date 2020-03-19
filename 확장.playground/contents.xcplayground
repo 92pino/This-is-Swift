@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' display-mode='rendered'>
+    <pages>
+        <page name='Subscript'/>
+        <page name='재정의(override)'/>
+        <page name='프로퍼티 재정의'/>
+        <page name='프로퍼티 감시자 재정의'/>
+        <page name='재정의 방지'/>
+        <page name='상속'/>
+        <page name='클래스의 이니셜라이저'/>
+        <page name='요구 이니셜라이저'/>
+    </pages>
+</playground>
