@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<playground version='6.0' target-platform='ios' display-mode='rendered'>
-    <pages>
-        <page name='옵셔널 체이닝'/>
-        <page name='서브스크립트 호출'/>
-        <page name='빠른종료'/>
-    </pages>
-</playground>
