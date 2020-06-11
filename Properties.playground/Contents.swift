@@ -127,3 +127,81 @@ let myAccount2: ForeignAccount = ForeignAccount()
 myAccount2.credit = 1000
 
 myAccount2.dollarValue = 2
+
+// 타입 프로퍼티
+// 모든 타입이 사용할 수 있는 상수 프로퍼티 또는 글로벌 변수 프로퍼티와 같이 특정 타입의 모든 인스턴스에 공통적인 값을 정의하는데 사용
+
+// 저장 타입프로퍼티
+// 변수 또는 상수로 선언 가능
+// 반드시 초깃값을 설정해야 하며 지연 연산이 가능하다.
+// ==> 초기화시 타입 자체에는 저장 타입 프로퍼티에 값을 할당할 initializer가 없기 때문
+// ==> 지연 저장 프로퍼티와는 다르게 다중 스레드 환경이라고 하더라도 한 번만 초기화된다는 보장을 받아서 lazy 키워드를 사용할 필요가 없다.
+
+// 연산 타입 프로퍼티
+// 항상 변수 프로퍼티로 선언
+
+class AClass {
+  // 저장 타입 프로퍼티
+  static var typeProperty: Int = 0
+  
+  // 저장 인스턴스 프로퍼티
+  var instanceProperty: Int = 0 {
+    didSet {
+      AClass.typeProperty = instanceProperty + 100
+    }
+  }
+  
+  // 연산 타입 프로퍼티
+  static var typeComputedProperty: Int {
+    get {
+      return typeProperty
+    }
+    
+    set {
+      typeProperty = newValue
+    }
+  }
+}
+
+AClass.typeProperty
+AClass.typeProperty = 123
+AClass.typeProperty
+
+let classInstance: AClass = AClass()
+classInstance.instanceProperty = 100
+
+print(AClass.typeProperty)
+print(AClass.typeComputedProperty)
+
+class SomeClass {
+  static var storedTypeProperty = "Some value"
+  
+  static var computedTypeProperty: Int {
+    return 27
+  }
+  
+  class var overrideableComputedTypeProperty: Int {
+    return 107
+  }
+}
+
+class typePropertyAccount {
+  static let dollarExchangeRate: Double = 1000.0  // 타입 상수 프로퍼티
+  
+  var credit: Int = 0
+  var dollarValue: Double {
+    get {
+      return Double(credit) / typePropertyAccount.dollarExchangeRate
+    }
+    
+    set(new) {
+      credit = Int(new * typePropertyAccount.dollarExchangeRate)
+      print("잔액을 \(new)달러로 변경 중입니다.")
+    }
+  }
+}
+
+let result: typePropertyAccount = typePropertyAccount()
+
+result.dollarValue = 2
+print(result.credit)
