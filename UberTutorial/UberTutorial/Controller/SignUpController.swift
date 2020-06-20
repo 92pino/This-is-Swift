@@ -1,15 +1,15 @@
 //
-//  LoginController.swift
+//  SignUpController.swift
 //  UberTutorial
 //
-//  Created by JinBae Jeong on 2020/06/17.
+//  Created by JinBae Jeong on 2020/06/20.
 //  Copyright © 2020 pino. All rights reserved.
 //
 
 import UIKit
 import SnapKit
 
-class LoginController: UIViewController {
+class SignUpController: UIViewController {
   
   // MARK: - Properties
   
@@ -34,6 +34,18 @@ class LoginController: UIViewController {
   private let emailTextField: UITextField = {
     return UITextField().textField(withPlaceholder: "Email", isSecureTextEntry: false)
   }()
+  
+  private lazy var fullnameContainerView: UIView = {
+    let view = UIView().inputContainerView(image: #imageLiteral(resourceName: "ic_person_outline_white_2x"), textField: fullnameTextField)
+    view.snp.makeConstraints {
+      $0.height.equalTo(50)
+    }
+    return view
+  }()
+  
+  private let fullnameTextField: UITextField = {
+    return UITextField().textField(withPlaceholder: "Full Name", isSecureTextEntry: false)
+  }()
 
   private lazy var passwordContainerView: UIView = {
     let view = UIView().inputContainerView(image: #imageLiteral(resourceName: "ic_lock_outline_white_2x"), textField: passwordTextField)
@@ -45,6 +57,27 @@ class LoginController: UIViewController {
   
   private let passwordTextField: UITextField = {
     return UITextField().textField(withPlaceholder: "Password", isSecureTextEntry: true)
+  }()
+  
+  private lazy var accountTypeContainerView: UIView = {
+    let view = UIView().inputContainerView(image: #imageLiteral(resourceName: "ic_account_box_white_2x"), segmentedControl: accountTypeSegmentedControl)
+    view.snp.makeConstraints {
+      $0.height.equalTo(50)
+    }
+    return view
+  }()
+  
+  private let accountTypeTextField: UITextField = {
+    return UITextField().textField(withPlaceholder: "Password", isSecureTextEntry: true)
+  }()
+  
+  private let accountTypeSegmentedControl: UISegmentedControl = {
+    let sc = UISegmentedControl(items: ["Rider", "Driver"])
+    sc.backgroundColor = .backgroundColor
+    sc.tintColor = .init(white: 1, alpha: 0.87)
+    sc.selectedSegmentIndex = 0
+    
+    return sc
   }()
   
   private let loginButton: UIButton = {
@@ -74,9 +107,8 @@ class LoginController: UIViewController {
     
     return button
   }()
-
-  // MARK: - Lifecycle
   
+  // MARK: - LifeCycle
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -88,11 +120,12 @@ class LoginController: UIViewController {
   }
   
   // MARK: - Helper Functions
+  // MARK: - Helper Functions
   func configureUI() {
     configureNavigationBar()
     view.backgroundColor = .backgroundColor
     
-    let stack = UIStackView(arrangedSubviews: [emailContainerView, passwordContainerView, loginButton])
+    let stack = UIStackView(arrangedSubviews: [emailContainerView, fullnameContainerView, passwordContainerView, accountTypeContainerView, loginButton])
     stack.axis = .vertical
     stack.distribution = .fillEqually
     stack.spacing = 24
@@ -128,5 +161,4 @@ class LoginController: UIViewController {
     let controller = SignUpController()
     navigationController?.pushViewController(controller, animated: true)
   }
-  
 }
