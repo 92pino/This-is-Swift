@@ -1,17 +1,16 @@
 //
 //  Extensions.swift
-//  UberTutorial
+//  Uber
 //
-//  Created by JinBae Jeong on 2020/06/20.
+//  Created by JinBae Jeong on 2020/02/21.
 //  Copyright © 2020 pino. All rights reserved.
 //
 
 import UIKit
-import SnapKit
 
 extension UIColor {
   static func rgb(red: CGFloat, green: CGFloat, blue: CGFloat) -> UIColor {
-    return UIColor.init(red: red/255, green: green/255, blue: blue/255, alpha: 1)
+    return UIColor.init(red: red/255, green: green/255, blue: blue/255, alpha: 1.0)
   }
   
   static let backgroundColor = UIColor.rgb(red: 25, green: 25, blue: 25)
@@ -19,63 +18,90 @@ extension UIColor {
 }
 
 extension UIView {
+  
   func inputContainerView(image: UIImage, textField: UITextField? = nil, segmentedControl: UISegmentedControl? = nil) -> UIView {
     let view = UIView()
     
     let imageView = UIImageView()
     imageView.image = image
     imageView.alpha = 0.87
-    
-    let seperatorView = UIView()
-    seperatorView.backgroundColor = .lightGray
+    view.addSubview(imageView)
     
     if let textField = textField {
-      [imageView, textField, seperatorView].forEach {
-        view.addSubview($0) }
+      imageView.centerY(inView: view)
+      imageView.anchor(left: view.leftAnchor, paddingLeft: 8, width: 24, height: 24)
       
-      imageView.snp.makeConstraints {
-        $0.centerY.equalToSuperview()
-        $0.left.equalToSuperview().offset(8)
-        $0.width.height.equalTo(24)
-      }
-      
-      textField.snp.makeConstraints {
-        $0.left.equalTo(imageView.snp.right).offset(8)
-        $0.right.equalToSuperview()
-        $0.centerY.equalToSuperview()
-        $0.bottom.equalToSuperview().offset(-8)
-      }
-      
-      seperatorView.snp.makeConstraints {
-        $0.bottom.right.equalToSuperview()
-        $0.left.equalToSuperview().offset(8)
-        $0.height.equalTo(0.75)
-      }
+      view.addSubview(textField)
+      textField.centerY(inView: view)
+      textField.anchor(left: imageView.rightAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingLeft: 8, paddingBottom: 8)
     }
     
     if let sc = segmentedControl {
+      imageView.anchor(top: view.topAnchor, left: view.leftAnchor, paddingTop: -8, paddingLeft: 8, width:24, height: 24)
       
       view.addSubview(sc)
-      
-      imageView.snp.makeConstraints {
-        $0.top.equalTo(view.snp.top).offset(-8)
-        $0.left.equalTo(view.snp.left).offset(8)
-        $0.width.equalTo(24)
-        $0.height.equalTo(24)
-      }
-      
-      sc.snp.makeConstraints {
-        $0.left.equalTo(view.snp.left).offset(8)
-        $0.right.equalTo(view.snp.right).offset(-8)
-        $0.centerY.equalTo(view.snp.centerY).offset(8)
-      }
+      sc.anchor(left: view.leftAnchor, right: view.rightAnchor, paddingLeft: 8, paddingRight: 8)
+      sc.centerY(inView: view, constant: 8)
     }
+    
+    let separatorView = UIView()
+    separatorView.backgroundColor = .lightGray
+    view.addSubview(separatorView)
+    separatorView.anchor(left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingLeft: 8, height: 0.75)
     
     return view
   }
+  
+  func anchor(top: NSLayoutYAxisAnchor? = nil,
+              left: NSLayoutXAxisAnchor? = nil,
+              bottom: NSLayoutYAxisAnchor? = nil,
+              right: NSLayoutXAxisAnchor? = nil,
+              paddingTop: CGFloat = 0,
+              paddingLeft: CGFloat = 0,
+              paddingBottom: CGFloat = 0,
+              paddingRight: CGFloat = 0,
+              width: CGFloat? = nil,
+              height: CGFloat? = nil) {
+    
+    self.translatesAutoresizingMaskIntoConstraints = false
+    
+    if let top = top {
+      topAnchor.constraint(equalTo: top, constant: paddingTop).isActive = true
+    }
+    
+    if let left = left {
+      leftAnchor.constraint(equalTo: left, constant: paddingLeft).isActive = true
+    }
+    
+    if let bottom = bottom {
+      bottomAnchor.constraint(equalTo: bottom, constant: -paddingBottom).isActive = true
+    }
+    
+    if let right = right {
+      rightAnchor.constraint(equalTo: right, constant: -paddingRight).isActive = true
+    }
+    
+    if let width = width {
+      widthAnchor.constraint(equalToConstant: width).isActive = true
+    }
+    
+    if let height = height {
+      heightAnchor.constraint(equalToConstant: height).isActive = true
+    }
+  }
+  
+  func centerX(inView view: UIView) {
+    centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+  }
+  
+  func centerY(inView view: UIView, constant: CGFloat = 0) {
+    centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: constant).isActive = true
+  }
+  
 }
 
 extension UITextField {
+  
   func textField(withPlaceholder placeholder: String, isSecureTextEntry: Bool) -> UITextField {
     let tf = UITextField()
     tf.borderStyle = .none
@@ -87,4 +113,5 @@ extension UITextField {
     
     return tf
   }
+  
 }

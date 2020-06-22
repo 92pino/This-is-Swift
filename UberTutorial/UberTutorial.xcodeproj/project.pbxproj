@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		25199DC19884451659C8C0C2 /* Pods_UberTutorial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 731974546EF55FCBA2945CCC /* Pods_UberTutorial.framework */; };
+		61A5730524A0E930005B0842 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A5730424A0E930005B0842 /* AuthButton.swift */; };
+		61A5730724A0EC79005B0842 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 61A5730624A0EC79005B0842 /* GoogleService-Info.plist */; };
+		61A5730924A0F52A005B0842 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A5730824A0F529005B0842 /* HomeController.swift */; };
 		61D20233249DAA0B0087CC34 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D20232249DAA0B0087CC34 /* Extensions.swift */; };
 		61D20235249DDA610087CC34 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D20234249DDA610087CC34 /* SignUpController.swift */; };
 		61E10CC424993743006FCC2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E10CC324993743006FCC2B /* AppDelegate.swift */; };
@@ -20,6 +23,9 @@
 
 /* Begin PBXFileReference section */
 		579281673A97D2630740896C /* Pods-UberTutorial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UberTutorial.debug.xcconfig"; path = "Target Support Files/Pods-UberTutorial/Pods-UberTutorial.debug.xcconfig"; sourceTree = "<group>"; };
+		61A5730424A0E930005B0842 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
+		61A5730624A0EC79005B0842 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		61A5730824A0F529005B0842 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		61D20232249DAA0B0087CC34 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		61D20234249DDA610087CC34 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		61E10CC024993743006FCC2B /* UberTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UberTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +90,7 @@
 				61E10CC524993743006FCC2B /* SceneDelegate.swift */,
 				61E10CC924993743006FCC2B /* Main.storyboard */,
 				61E10CCC2499374A006FCC2B /* Assets.xcassets */,
+				61A5730624A0EC79005B0842 /* GoogleService-Info.plist */,
 				61E10CCE2499374A006FCC2B /* LaunchScreen.storyboard */,
 				61E10CD12499374A006FCC2B /* Info.plist */,
 			);
@@ -110,6 +117,7 @@
 			children = (
 				61E10CDC24993BA9006FCC2B /* LoginController.swift */,
 				61D20234249DDA610087CC34 /* SignUpController.swift */,
+				61A5730824A0F529005B0842 /* HomeController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -117,6 +125,7 @@
 		61E10CDA24993B13006FCC2B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				61A5730424A0E930005B0842 /* AuthButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -198,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				61E10CD02499374A006FCC2B /* LaunchScreen.storyboard in Resources */,
+				61A5730724A0EC79005B0842 /* GoogleService-Info.plist in Resources */,
 				61E10CCD2499374A006FCC2B /* Assets.xcassets in Resources */,
 				61E10CCB24993743006FCC2B /* Main.storyboard in Resources */,
 			);
@@ -253,6 +263,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				61D20235249DDA610087CC34 /* SignUpController.swift in Sources */,
+				61A5730524A0E930005B0842 /* AuthButton.swift in Sources */,
+				61A5730924A0F52A005B0842 /* HomeController.swift in Sources */,
 				61E10CC424993743006FCC2B /* AppDelegate.swift in Sources */,
 				61E10CDD24993BA9006FCC2B /* LoginController.swift in Sources */,
 				61E10CC624993743006FCC2B /* SceneDelegate.swift in Sources */,
