@@ -11,6 +11,7 @@
 		61A5730524A0E930005B0842 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A5730424A0E930005B0842 /* AuthButton.swift */; };
 		61A5730724A0EC79005B0842 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 61A5730624A0EC79005B0842 /* GoogleService-Info.plist */; };
 		61A5730924A0F52A005B0842 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A5730824A0F529005B0842 /* HomeController.swift */; };
+		61A5730B24A25FCA005B0842 /* LocationInputActivationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A5730A24A25FCA005B0842 /* LocationInputActivationView.swift */; };
 		61D20233249DAA0B0087CC34 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D20232249DAA0B0087CC34 /* Extensions.swift */; };
 		61D20235249DDA610087CC34 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D20234249DDA610087CC34 /* SignUpController.swift */; };
 		61E10CC424993743006FCC2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E10CC324993743006FCC2B /* AppDelegate.swift */; };
@@ -26,6 +27,7 @@
 		61A5730424A0E930005B0842 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		61A5730624A0EC79005B0842 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		61A5730824A0F529005B0842 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		61A5730A24A25FCA005B0842 /* LocationInputActivationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInputActivationView.swift; sourceTree = "<group>"; };
 		61D20232249DAA0B0087CC34 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		61D20234249DDA610087CC34 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		61E10CC024993743006FCC2B /* UberTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UberTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				61A5730424A0E930005B0842 /* AuthButton.swift */,
+				61A5730A24A25FCA005B0842 /* LocationInputActivationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				61E10CC424993743006FCC2B /* AppDelegate.swift in Sources */,
 				61E10CDD24993BA9006FCC2B /* LoginController.swift in Sources */,
 				61E10CC624993743006FCC2B /* SceneDelegate.swift in Sources */,
+				61A5730B24A25FCA005B0842 /* LocationInputActivationView.swift in Sources */,
 				61D20233249DAA0B0087CC34 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
