@@ -15,7 +15,7 @@
 		61A5730F24A27425005B0842 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A5730E24A27425005B0842 /* LocationCell.swift */; };
 		61A5731124A37F7A005B0842 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A5731024A37F7A005B0842 /* Service.swift */; };
 		61A5731324A396A4005B0842 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A5731224A396A4005B0842 /* User.swift */; };
-		61A5731524A3A8B4005B0842 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 61A5731424A3A8B4005B0842 /* GoogleService-Info.plist */; };
+		61A5731724A4F433005B0842 /* LocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A5731624A4F433005B0842 /* LocationHandler.swift */; };
 		61D20233249DAA0B0087CC34 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D20232249DAA0B0087CC34 /* Extensions.swift */; };
 		61D20235249DDA610087CC34 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D20234249DDA610087CC34 /* SignUpController.swift */; };
 		61E10CC424993743006FCC2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E10CC324993743006FCC2B /* AppDelegate.swift */; };
@@ -24,6 +24,7 @@
 		61E10CCD2499374A006FCC2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61E10CCC2499374A006FCC2B /* Assets.xcassets */; };
 		61E10CD02499374A006FCC2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61E10CCE2499374A006FCC2B /* LaunchScreen.storyboard */; };
 		61E10CDD24993BA9006FCC2B /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E10CDC24993BA9006FCC2B /* LoginController.swift */; };
+		61FCB88624A4FFA4008EB66E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 61FCB88524A4FFA3008EB66E /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +36,7 @@
 		61A5730E24A27425005B0842 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		61A5731024A37F7A005B0842 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		61A5731224A396A4005B0842 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		61A5731424A3A8B4005B0842 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		61A5731624A4F433005B0842 /* LocationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHandler.swift; sourceTree = "<group>"; };
 		61D20232249DAA0B0087CC34 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		61D20234249DDA610087CC34 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		61E10CC024993743006FCC2B /* UberTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UberTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +47,7 @@
 		61E10CCF2499374A006FCC2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		61E10CD12499374A006FCC2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61E10CDC24993BA9006FCC2B /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		61FCB88524A4FFA3008EB66E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		731974546EF55FCBA2945CCC /* Pods_UberTutorial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UberTutorial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88F19B666E97A91E49641196 /* Pods-UberTutorial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UberTutorial.release.xcconfig"; path = "Target Support Files/Pods-UberTutorial/Pods-UberTutorial.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,8 +103,8 @@
 				61E10CC924993743006FCC2B /* Main.storyboard */,
 				61E10CCC2499374A006FCC2B /* Assets.xcassets */,
 				61E10CCE2499374A006FCC2B /* LaunchScreen.storyboard */,
-				61A5731424A3A8B4005B0842 /* GoogleService-Info.plist */,
 				61E10CD12499374A006FCC2B /* Info.plist */,
+				61FCB88524A4FFA3008EB66E /* GoogleService-Info.plist */,
 			);
 			path = UberTutorial;
 			sourceTree = "<group>";
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				61D20232249DAA0B0087CC34 /* Extensions.swift */,
+				61A5731624A4F433005B0842 /* LocationHandler.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -222,7 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				61E10CD02499374A006FCC2B /* LaunchScreen.storyboard in Resources */,
-				61A5731524A3A8B4005B0842 /* GoogleService-Info.plist in Resources */,
+				61FCB88624A4FFA4008EB66E /* GoogleService-Info.plist in Resources */,
 				61E10CCD2499374A006FCC2B /* Assets.xcassets in Resources */,
 				61E10CCB24993743006FCC2B /* Main.storyboard in Resources */,
 			);
@@ -284,6 +287,7 @@
 				61E10CC424993743006FCC2B /* AppDelegate.swift in Sources */,
 				61E10CDD24993BA9006FCC2B /* LoginController.swift in Sources */,
 				61A5730F24A27425005B0842 /* LocationCell.swift in Sources */,
+				61A5731724A4F433005B0842 /* LocationHandler.swift in Sources */,
 				61E10CC624993743006FCC2B /* SceneDelegate.swift in Sources */,
 				61A5731324A396A4005B0842 /* User.swift in Sources */,
 				61A5731124A37F7A005B0842 /* Service.swift in Sources */,

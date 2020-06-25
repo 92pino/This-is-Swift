@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>316924966285-75rllmpb7nhv426ccs0att6kdm167veg.apps.googleusercontent.com</string>
+	<string>980919720658-pl6ame6n4fv6lr30raaqbbblc83sgl7a.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.316924966285-75rllmpb7nhv426ccs0att6kdm167veg</string>
+	<string>com.googleusercontent.apps.980919720658-pl6ame6n4fv6lr30raaqbbblc83sgl7a</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCKoU3qd2X0vAYYSq8i6Q1rlTMunRGXv2M</string>
+	<string>AIzaSyCZ2trvFz86yW193IdR_BIon1ogL4EZSGQ</string>
 	<key>GCM_SENDER_ID</key>
-	<string>316924966285</string>
+	<string>980919720658</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>io.github.92pino.UberTutorial</string>
 	<key>PROJECT_ID</key>
-	<string>ubertutorial-284de</string>
+	<string>ubertutorial-aa7a2</string>
 	<key>STORAGE_BUCKET</key>
-	<string>ubertutorial-284de.appspot.com</string>
+	<string>ubertutorial-aa7a2.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:316924966285:ios:c874e6ae41b3f098a4f9c4</string>
+	<string>1:980919720658:ios:a6098a64e38f8adaa22b0b</string>
 	<key>DATABASE_URL</key>
-	<string>https://ubertutorial-284de.firebaseio.com</string>
+	<string>https://ubertutorial-aa7a2.firebaseio.com</string>
 </dict>
 </plist>
