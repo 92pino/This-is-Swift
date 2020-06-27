@@ -6,10 +6,7 @@ target 'UberTutorial' do
   use_frameworks!
 
   # Pods for UberTutorial
-  pod 'SnapKit'
-  pod 'Firebase/Core'
-  pod 'Firebase/Database'
-  pod 'Firebase/Auth'
-  pod 'Firebase/Storage'
-  pod 'GeoFire', '>= 1.1'
+
+  pod 'SnapKit', '~> 5.0.0'
+
 end
