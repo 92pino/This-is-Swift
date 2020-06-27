@@ -7,10 +7,19 @@
 //
 
 import UIKit
+import MapKit
 
 class LocationCell: UITableViewCell {
   
   // Mark: - Properties
+  
+  var placemark: MKPlacemark? {
+    didSet {
+      titleLabel.text = placemark?.name
+      addressLabel.text = placemark?.address
+    }
+  }
+  
   private let titleLabel: UILabel = {
     let label = UILabel()
     label.font = UIFont.systemFont(ofSize: 14)

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 extension UIColor {
   static func rgb(red: CGFloat, green: CGFloat, blue: CGFloat) -> UIColor {
@@ -91,5 +92,22 @@ extension UITextField {
     tf.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor : UIColor.lightGray])
     
     return tf
+  }
+}
+
+extension MKPlacemark {
+  var address: String? {
+    get {
+      // 상세 주소
+      guard let subThoroughfare = subThoroughfare else { return nil }
+      // 리 이름
+      guard let throughfare = thoroughfare else { return nil }
+      // 시 이름
+      guard let locality = locality else { return nil }
+      // 도 이름
+      guard let adminArea = administrativeArea else { return nil }
+      
+      return "\(subThoroughfare) \(throughfare), \(locality), \(adminArea)"
+    }
   }
 }
