@@ -11,9 +11,10 @@ import Firebase
 import MapKit
 
 private let reuseIdentifier = "LocationCell"
+private let annotationIdentifier = "DriverAnnotation"
 
 class HomeController: UIViewController {
-
+  
   // Mark: - Properties
   private let mapView = MKMapView()
   
@@ -36,11 +37,8 @@ class HomeController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    view.backgroundColor = .red
     checkIfUserIsLoggedIn()
     enableLocationServices()
-    fetchUserData()
-    fetchDriverData()
   }
   
   // MARK: - API
@@ -52,15 +50,26 @@ class HomeController: UIViewController {
     }
   }
   
-  func fetchDriverData() {
+  func fetchDrivers() {
     guard let location = locationManager?.location else { return }
-    Service.shared.fetchDrivers(location: location) { (driver) in
+    Service.shared.fetchDrivers(location: location) { driver in
       guard let coordinate = driver.location?.coordinate else { return }
       let annotation = DriverAnnotation(uid: driver.uid, coordinate: coordinate)
       
-      print("DEBUG: \(annotation)")
+      var driverIsVisible: Bool {
+        return self.mapView.annotations.contains { annotation -> Bool in
+          guard let driverAnno = annotation as? DriverAnnotation else { return false }
+          if driverAnno.uid == driver.uid {
+            driverAnno.updateAnnotationPosition(withCoordinate: coordinate)
+            return true
+          }
+          return false
+        }
+      }
       
-      self.mapView.addAnnotation(annotation)
+      if !driverIsVisible {
+        self.mapView.addAnnotation(annotation)
+      }
     }
   }
   
@@ -73,7 +82,7 @@ class HomeController: UIViewController {
       }
     } else {
       // 로그인 됐을 경우
-      configureUI()
+      configure()
     }
   }
   
@@ -90,6 +99,12 @@ class HomeController: UIViewController {
   }
   
   // MARK: - Helper Functions
+  
+  func configure() {
+    configureUI()
+    fetchUserData()
+    fetchDrivers()
+  }
   
   func configureUI() {
     configureMapView()
@@ -118,6 +133,8 @@ class HomeController: UIViewController {
     
     mapView.showsUserLocation = true
     mapView.userTrackingMode = .follow
+    
+    mapView.delegate = self
   }
   
   func configureLocationInputView() {
@@ -155,7 +172,23 @@ class HomeController: UIViewController {
   }
   
   // Mark: - Selectors
+  
+}
 
+// MARK: - MKMapViewDelegate
+extension HomeController: MKMapViewDelegate {
+  
+  func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+    if let annotation = annotation as? DriverAnnotation {
+      let view = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
+      view.image = #imageLiteral(resourceName: "chevron-sign-to-right")
+      
+      return view
+    }
+    
+    return nil
+  }
+  
 }
 
 // MARK: - LocationServices
