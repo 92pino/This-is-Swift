@@ -6,6 +6,10 @@ import UIKit
  For-in 문은 배열, 숫자, 문자열을 순서대로 순회 하기 위해 사용
  
 */
+for row in 1...5 {
+  print(row)
+}
+
 let names = ["Anna", "Alex", "Brian", "Jack"]
 for name in names {
   print("Hello, \(name)")

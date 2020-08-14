@@ -58,4 +58,7 @@ farmAnimals.isSuperset(of: houseAnimals)
 
 // A.isDisjoint(with: B) A와 B의 교집합이 없을때 true 교집합이 있을 경우 false
 farmAnimals.isDisjoint(with: cityAnimals)
+
+let colors: Set = ["red", "green", "blue"]
+print(colors)
 //: [Next](@next)

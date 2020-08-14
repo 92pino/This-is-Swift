@@ -3,5 +3,6 @@
     <pages>
         <page name='For-In'/>
         <page name='While'/>
+        <page name='Loop'/>
     </pages>
 </playground>

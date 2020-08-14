@@ -10,6 +10,23 @@ import UIKit
 
 // Array
 
+/*:
+ - 배열에 저장할 아이템의 타입에는 제약이 없지만 하나의 배열에 저장하는 아이템 타입은 모두 같아야 한다.
+ - 선언 시 배열에 저장할 아이템의 타입을 명확히 정의해아 한다.
+ - 배열의 크기는 동적으로 확장할 수 있다.
+*/
+
+var cities = ["Seoul", "New York", "LA", "Santiago"]
+cities.count
+
+for i in 0..<cities.count {
+  print("\(i)번째 배열 원소는 \(cities[i])입니다.")
+}
+
+for row in cities {
+  print("배열 원소는 \(row)입니다.")
+}
+
 var someInts = [Int]()
 print("someInts is of type [Int] with \(someInts.count) items.")
 
