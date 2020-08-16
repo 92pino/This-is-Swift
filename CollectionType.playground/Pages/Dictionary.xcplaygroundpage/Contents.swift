@@ -25,15 +25,15 @@ numberForName = ["yagom": 100, "chulsoo": 200, "jenny": 300]
 print(numberForName.isEmpty)
 print(numberForName.count)
 
-//print(numberForName["chulsoo"])
-//print(numberForName["minji"])
-//numberForName["chulsoo"] = 150
-//print(numberForName["chulsoo"])
-//
-//numberForName["max"] = 999
-//print(numberForName["max"])
-//
-//print(numberForName.removeValue(forKey: "yagom"))
-//
-//print(numberForName.removeValue(forKey: "yagom"))
+print(numberForName["chulsoo"])
+print(numberForName["minji"])
+numberForName["chulsoo"] = 150
+print(numberForName["chulsoo"])
+
+numberForName["max"] = 999
+print(numberForName["max"])
+
+print(numberForName.removeValue(forKey: "yagom"))
+
+print(numberForName.removeValue(forKey: "yagom"))
 //: [Next](@next)
