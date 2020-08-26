@@ -2,32 +2,48 @@
 //  ViewController.swift
 //  Network_Practice
 //
-//  Created by jbjeong on 2020/06/22.
-//  Copyright © 2020 정진배. All rights reserved.
+//  Created by JinBae Jeong on 2020/08/26.
+//  Copyright © 2020 pino. All rights reserved.
 //
 
 import UIKit
 
 class ViewController: UIViewController {
-    
-    private var handler: ((Result<[UserData], API.APIError>) -> Void)!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        handler = { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success(let userDatas):
-                guard let userData = userDatas.first else { return }
-                print(userData)
-            case .failure(let error):
-                print("Error", error.localizedDescription)
-            }
-        }
-        
-        API.shared.get1(completionHandler: handler)
+  
+  private var serviceData: [Course]? {
+    willSet {
+      guard let info = newValue else { return }
     }
+  }
+  
+  private let tableView: UITableView = {
+    let tb = UITableView()
+    
+    return tb
+  }()
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    fetchCourseJSON()
+    
+    DispatchQueue.main.async {
+      print(self.serviceData)
+    }
+  }
+  
+  private func fetchCourseJSON() {
+    
+    DataManager.shared.service.fetchCourseData { result in
+      switch result {
+      case .success(let courses):
+        self.serviceData = courses
+      case .failure(let error):
+        print(error.localizedDescription)
+      }
+    }
+    
+  }
 
 
 }

@@ -50,4 +50,17 @@ let insRes = Resolution()
 let width = insRes.width
 print("insRes 인스턴스의 width 값은 \(width)입니다")
 
+struct MyDate = {
+  var BC = false
+  var year = 1
+  var month = 1
+  var day = 1
+}
+
+var date1 = MyDate()
+
+date1.year
+date1.year = 2014
+date1.year
+
 //: [Next](@next)
