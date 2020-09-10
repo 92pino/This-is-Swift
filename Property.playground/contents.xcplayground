@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<playground version='6.0' target-platform='macos' display-mode='rendered'>
-    <pages>
-        <page name='저장 프로퍼티'/>
-        <page name='연산 프로퍼티'/>
-    </pages>
-</playground>
