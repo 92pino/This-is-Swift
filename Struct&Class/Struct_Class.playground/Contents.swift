@@ -103,3 +103,24 @@ print(alsoTenEighty.frameRate, tenEighty.frameRate)
  - 구조체가 프로퍼티나 메소드 등을 상속할 필요가 없는 경우
  
  */
+
+struct PositionValue {
+  var x = 0
+  var y = 0
+}
+
+class PositionObject {
+  var x = 0
+  var y = 0
+}
+
+var v = PositionValue()
+var o = PositionObject()
+
+var v2 = v
+var o2 = o
+
+v2.x = 12
+v2.y = 34
+
+print(v.x, v.y, v2.x, v2.y)
