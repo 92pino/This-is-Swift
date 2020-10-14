@@ -157,10 +157,55 @@ func delay(_ seconds: Int, closure: @escaping () -> ()) {
 
 func demo() {
   let pokemon = Pokemon(name: "Mewtwo")
-  print("before closure: \(pokemon)")
+  print("before closure: \(pokemon.name)")
   delay(1) {
-    print("inside closure: \(pokemon)")
+    print("inside closure: \(pokemon.name)")
   }
   print("bye")
 }
-demo()
+//demo()
+
+func demo2() {
+  var pokemon = Pokemon(name: "Pikachu")
+  print("before closure: \(pokemon.name)")
+  delay(1) {
+    print("inside closure: \(pokemon.name)")
+  }
+  pokemon = Pokemon(name: "Mewtwo")
+  print("after closure: \(pokemon.name)")
+}
+
+demo2()
+
+func demo3() {
+  var pokemon = Pokemon(name: "Pikachu")
+  print("before closure: \(pokemon.name)")
+  // capture list를 사용하면 캡쳐된 변수는 클로저가 생성되는 시점에 평가된다.
+  delay(1) { [pokemon] in
+    print("inside closure: \(pokemon.name)")
+  }
+  pokemon = Pokemon(name: "Mewtwo")
+  print("after closure: \(pokemon.name)")
+}
+//demo3()
+
+class ClosureTest {
+  var id: Int
+  
+  lazy var closure: () -> Int = {
+    self.id += 1
+    return self.id
+  }
+  
+  init (id: Int) {
+    self.id = id
+  }
+  
+  deinit {
+    print("ClosureTest is deallocated")
+  }
+}
+
+var closureTest: ClosureTest? = ClosureTest(id: 1)
+print(closureTest!.closure())
+closureTest = nil

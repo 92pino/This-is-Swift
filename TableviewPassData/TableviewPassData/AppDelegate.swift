@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  UserDefaults_Demo
+//  TableviewPassData
 //
-//  Created by JinBae Jeong on 2020/10/07.
+//  Created by JinBae Jeong on 2020/10/14.
 //
 
 import UIKit

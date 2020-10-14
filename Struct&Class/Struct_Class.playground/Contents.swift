@@ -124,3 +124,7 @@ v2.x = 12
 v2.y = 34
 
 print(v.x, v.y, v2.x, v2.y)
+
+let num: [Int?] = [1, nil, 2, nil, 3]
+let result: [Int] = num.compactMap { $0 }
+print(result)
