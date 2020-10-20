@@ -13,7 +13,7 @@
 		61C17B6C253F2F010013AEA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61C17B6A253F2F010013AEA5 /* Main.storyboard */; };
 		61C17B6E253F2F120013AEA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61C17B6D253F2F120013AEA5 /* Assets.xcassets */; };
 		61C17B71253F2F120013AEA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61C17B6F253F2F120013AEA5 /* LaunchScreen.storyboard */; };
-		61C17B7A253F2F700013AEA5 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C17B79253F2F700013AEA5 /* Data.swift */; };
+		61C17B7A253F2F700013AEA5 /* SingletonClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C17B79253F2F700013AEA5 /* SingletonClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,7 @@
 		61C17B6D253F2F120013AEA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		61C17B70253F2F120013AEA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		61C17B72253F2F120013AEA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		61C17B79253F2F700013AEA5 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		61C17B79253F2F700013AEA5 /* SingletonClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingletonClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +65,7 @@
 				61C17B6D253F2F120013AEA5 /* Assets.xcassets */,
 				61C17B6F253F2F120013AEA5 /* LaunchScreen.storyboard */,
 				61C17B72253F2F120013AEA5 /* Info.plist */,
-				61C17B79253F2F700013AEA5 /* Data.swift */,
+				61C17B79253F2F700013AEA5 /* SingletonClass.swift */,
 			);
 			path = Singleton_Pattern;
 			sourceTree = "<group>";
@@ -143,7 +143,7 @@
 				61C17B69253F2F010013AEA5 /* ViewController.swift in Sources */,
 				61C17B65253F2F010013AEA5 /* AppDelegate.swift in Sources */,
 				61C17B67253F2F010013AEA5 /* SceneDelegate.swift in Sources */,
-				61C17B7A253F2F700013AEA5 /* Data.swift in Sources */,
+				61C17B7A253F2F700013AEA5 /* SingletonClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
