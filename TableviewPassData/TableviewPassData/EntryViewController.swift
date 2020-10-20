@@ -11,6 +11,8 @@ class EntryViewController: UIViewController {
   
   @IBOutlet var field: UITextField!
   
+  var update: (() -> ())?
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -20,12 +22,25 @@ class EntryViewController: UIViewController {
   }
   
   @objc func saveTask() {
-    
+    print(1111)
+
     guard let text = field.text, !text.isEmpty else {
       return
     }
+
+    guard let count = UserDefaults().value(forKey: "count") as? Int else { return }
+
+    let newCount = count + 1
+
+    UserDefaults().set(newCount, forKey: "count")
+
+    UserDefaults().set(text, forKey: "task_\(newCount)")
     
+    update?()
     
+    print(11112)
+    
+    navigationController?.popViewController(animated: true)
     
   }
 }
