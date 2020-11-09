@@ -19,23 +19,17 @@ class FormViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
   @IBAction func onSubmit(_ sender: UIButton) {
-    let preVC = self.presentingViewController
-    print(preVC)
-    guard let vc = preVC as? ViewController else { return }
-    print(vc)
+//    let ad = UIApplication.shared.delegate as? AppDelegate
+//
+//    ad?.paramEmail = self.email.text
+//    ad?.paramUpdate = self.isUpdate.isOn
+//    ad?.paramInterval = self.interval.value
+//
+//    self.presentingViewController?.dismiss(animated: true)
     
-//    vc.paramEmail = self.email.text
+    let userDefaults = UserDefaults.standard
+    
+    userDefaults.set(self.email.text, forKey: "email")
   }
-  
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
