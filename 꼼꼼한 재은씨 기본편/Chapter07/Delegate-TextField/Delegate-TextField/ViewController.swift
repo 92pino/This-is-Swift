@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
   
   @IBOutlet weak var tf: UITextField!
+  @IBOutlet weak var toggleSwitch: UISwitch!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -44,5 +45,23 @@ extension ViewController: UITextFieldDelegate {
   func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
     print("텍스트 필드의 편집이 시작됩니다.")
     return true
+  }
+  
+  func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    print("텍스트 필드의 내용이 \(string)으로 변경됩니다")
+    
+    if toggleSwitch.isOn {
+      if Int(string) == nil {
+        if (textField.text?.count)! + string.count > 10 {
+          return false
+        } else {
+          return true
+        }
+      } else {
+        return false
+      }
+    } else {
+      return false
+    }
   }
 }
