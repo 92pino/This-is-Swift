@@ -9,30 +9,48 @@ import UIKit
 
 class ListViewController: UITableViewController {
   
-  var dataset = [
-    ("다크 나이트", "영웅물에 철학에 음악까지 더해져 예술이 되다.", "2008-09-09", 8.95, "darknight.jpg"),
-    ("호우시절", "때를 알고 내리는 좋은 비", "2009-10-08", 7.31, "rain.jpg"),
-    ("말할 수 없는 비밀", "여기서 너까지 다섯 걸음", "2015-05-07", 9.19, "secret.jpg"),
-  ]
-  
   lazy var list: [MovieVO] = {
     var datalist = [MovieVO]()
-    for (title, description, opendate, rating, thumbnail) in dataset {
-      let mvo = MovieVO()
-      mvo.title = title
-      mvo.description = description
-      mvo.opendate = opendate
-      mvo.rating = rating
-      mvo.thumbnail = thumbnail
-      
-      datalist.append(mvo)
-    }
-    
     return datalist
   }()
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    let url = "http://swiftapi.rubypaper.co.kr:2029/hoppin/movies?version=1&page=1&count=30&genreId=&order=releasedateasc"
+    let apiURI : URL! = URL(string: url)
+    
+    // ② REST API를 호출
+    let apidata = try! Data(contentsOf: apiURI)
+    
+    // ③ 데이터 전송 결과를 로그로 출력 (반드시 필요한 코드는 아님)
+    let log = NSString(data: apidata, encoding: String.Encoding.utf8.rawValue) ?? ""
+    NSLog("API Result=\( log )")
+    
+    // ④ JSON 객체를 파싱하여 NSDictionary 객체로 받음
+    do {
+      let apiDictionary = try JSONSerialization.jsonObject(with: apidata, options: []) as! NSDictionary
+      
+      let hoppin = apiDictionary["hoppin"] as! NSDictionary
+      let movies = hoppin["movies"] as! NSDictionary
+      let movie = movies["movie"] as! NSArray
+      
+      for row in movie {
+        let r = row as! NSDictionary
+        
+        let mvo = MovieVO()
+        
+        mvo.title = r["title"] as? String
+        mvo.description = r["genreNames"] as? String
+        mvo.thumbnail = r["thumbnailImage"] as? String
+        mvo.detail = r["linkUrl"] as? String
+        mvo.rating = ((r["ratingAverage"] as! NSString).doubleValue)
+        
+        self.list.append(mvo)
+      }
+    } catch {
+      NSLog("Parse Error!!")
+    }
   }
   
   // MARK: - Table view data source
@@ -59,7 +77,7 @@ class ListViewController: UITableViewController {
     cell.desc?.text = row.description
     cell.opendate?.text = row.opendate
     cell.rating?.text = "\(row.rating!)"
-    cell.thumbnail.image = UIImage(named: row.thumbnail!)
+    cell.thumbnail.image = row.thumbnail != nil ? UIImage(named: row.thumbnail!) : nil
     
     return cell
   }
@@ -76,4 +94,43 @@ class ListViewController: UITableViewController {
     return 0
   }
   
+  @IBAction func add(_ sender: UIBarButtonItem) {
+    let alert = UIAlertController(title: "영화 입력", message: "추가될 영화 내역을 작성해주세요", preferredStyle: .alert)
+    alert.addTextField { (tf) in
+      tf.placeholder = "영화 제목을 입력해주세요"
+    }
+    alert.addTextField { (tf) in
+      tf.placeholder = "영화에 대한 설명을 입력해주세요"
+    }
+    alert.addTextField { (tf) in
+      tf.placeholder = "개봉일을 입력해주세요"
+    }
+    alert.addTextField { (tf) in
+      tf.placeholder = "평점을 입력해주세요"
+    }
+    
+    let ok = UIAlertAction(title: "OK", style: .default) { _ in
+      guard let title = alert.textFields?[0].text else { return }
+      guard let desc = alert.textFields?[1].text else { return }
+      guard let opendate = alert.textFields?[2].text else { return }
+      guard let rating = alert.textFields?[3].text else { return }
+      
+      var movie: MovieVO = MovieVO()
+      movie.title = title
+      movie.description = desc
+      movie.opendate = opendate
+      movie.rating = Double(rating)
+      
+      self.list.append(movie)
+      
+      self.tableView.reloadData()
+    }
+    
+    let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+    
+    alert.addAction(ok)
+    alert.addAction(cancel)
+    
+    self.present(alert, animated: true)
+  }
 }

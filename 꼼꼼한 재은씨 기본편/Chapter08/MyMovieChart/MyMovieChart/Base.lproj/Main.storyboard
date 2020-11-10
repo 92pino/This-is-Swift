@@ -77,7 +77,13 @@
                             <outlet property="delegate" destination="Cu2-aQ-0SF" id="Jj7-Nv-rM1"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="영화정보" id="Dob-fC-0Op"/>
+                    <navigationItem key="navigationItem" title="영화정보" id="Dob-fC-0Op">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="6No-3B-LNC">
+                            <connections>
+                                <action selector="add:" destination="Cu2-aQ-0SF" id="p82-Bh-NJn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bOA-FS-0EA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
