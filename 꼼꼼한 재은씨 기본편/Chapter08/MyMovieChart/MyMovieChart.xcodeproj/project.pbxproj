@@ -16,6 +16,10 @@
 		61CB7755255ACE6000386149 /* MovieVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CB7754255ACE6000386149 /* MovieVO.swift */; };
 		61CB7758255AE68600386149 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CB7757255AE68600386149 /* MovieCell.swift */; };
 		61CB7780255AF43300386149 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CB777F255AF43300386149 /* Config.swift */; };
+		61CB77A62562B2AC00386149 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CB77A52562B2AC00386149 /* DetailViewController.swift */; };
+		61CB77AB2562BA9300386149 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CB77AA2562BA9300386149 /* UIViewController+Extension.swift */; };
+		61CB77AF2562C1FF00386149 /* TheaterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CB77AE2562C1FF00386149 /* TheaterCell.swift */; };
+		61CB77B22562C2A500386149 /* TheaterListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CB77B12562C2A500386149 /* TheaterListController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		61CB7754255ACE6000386149 /* MovieVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieVO.swift; sourceTree = "<group>"; };
 		61CB7757255AE68600386149 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		61CB777F255AF43300386149 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		61CB77A52562B2AC00386149 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		61CB77AA2562BA9300386149 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		61CB77AE2562C1FF00386149 /* TheaterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterCell.swift; sourceTree = "<group>"; };
+		61CB77B12562C2A500386149 /* TheaterListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterListController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +70,7 @@
 		61C7FFE1255ACB7100B11544 /* MyMovieChart */ = {
 			isa = PBXGroup;
 			children = (
+				61CB77A82562BA6800386149 /* Utils */,
 				61CB777E255AF31600386149 /* Constants */,
 				61C7FFE2255ACB7100B11544 /* AppDelegate.swift */,
 				61C7FFE4255ACB7100B11544 /* SceneDelegate.swift */,
@@ -72,6 +81,9 @@
 				61CB7751255ACCDE00386149 /* ListViewController.swift */,
 				61CB7754255ACE6000386149 /* MovieVO.swift */,
 				61CB7757255AE68600386149 /* MovieCell.swift */,
+				61CB77A52562B2AC00386149 /* DetailViewController.swift */,
+				61CB77AE2562C1FF00386149 /* TheaterCell.swift */,
+				61CB77B12562C2A500386149 /* TheaterListController.swift */,
 			);
 			path = MyMovieChart;
 			sourceTree = "<group>";
@@ -82,6 +94,22 @@
 				61CB777F255AF43300386149 /* Config.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		61CB77A82562BA6800386149 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				61CB77A92562BA6C00386149 /* Extensions */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		61CB77A92562BA6C00386149 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				61CB77AA2562BA9300386149 /* UIViewController+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,12 +182,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61CB77AB2562BA9300386149 /* UIViewController+Extension.swift in Sources */,
 				61C7FFE3255ACB7100B11544 /* AppDelegate.swift in Sources */,
 				61CB7755255ACE6000386149 /* MovieVO.swift in Sources */,
+				61CB77B22562C2A500386149 /* TheaterListController.swift in Sources */,
 				61C7FFE5255ACB7100B11544 /* SceneDelegate.swift in Sources */,
+				61CB77AF2562C1FF00386149 /* TheaterCell.swift in Sources */,
 				61CB7758255AE68600386149 /* MovieCell.swift in Sources */,
 				61CB7780255AF43300386149 /* Config.swift in Sources */,
 				61CB7752255ACCDE00386149 /* ListViewController.swift in Sources */,
+				61CB77A62562B2AC00386149 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
