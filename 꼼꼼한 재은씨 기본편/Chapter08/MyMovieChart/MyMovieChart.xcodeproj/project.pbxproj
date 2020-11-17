@@ -20,6 +20,8 @@
 		61CB77AB2562BA9300386149 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CB77AA2562BA9300386149 /* UIViewController+Extension.swift */; };
 		61CB77AF2562C1FF00386149 /* TheaterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CB77AE2562C1FF00386149 /* TheaterCell.swift */; };
 		61CB77B22562C2A500386149 /* TheaterListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CB77B12562C2A500386149 /* TheaterListController.swift */; };
+		61CB77B625640B4C00386149 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61CB77B525640B4C00386149 /* MapKit.framework */; };
+		61CB77B825640BBB00386149 /* TheaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CB77B725640BBB00386149 /* TheaterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		61CB77AA2562BA9300386149 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		61CB77AE2562C1FF00386149 /* TheaterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterCell.swift; sourceTree = "<group>"; };
 		61CB77B12562C2A500386149 /* TheaterListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterListController.swift; sourceTree = "<group>"; };
+		61CB77B525640B4C00386149 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		61CB77B725640BBB00386149 /* TheaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61CB77B625640B4C00386149 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +61,7 @@
 			children = (
 				61C7FFE1255ACB7100B11544 /* MyMovieChart */,
 				61C7FFE0255ACB7100B11544 /* Products */,
+				61CB77B425640B4C00386149 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,6 +90,7 @@
 				61CB77A52562B2AC00386149 /* DetailViewController.swift */,
 				61CB77AE2562C1FF00386149 /* TheaterCell.swift */,
 				61CB77B12562C2A500386149 /* TheaterListController.swift */,
+				61CB77B725640BBB00386149 /* TheaterViewController.swift */,
 			);
 			path = MyMovieChart;
 			sourceTree = "<group>";
@@ -110,6 +117,14 @@
 				61CB77AA2562BA9300386149 /* UIViewController+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		61CB77B425640B4C00386149 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				61CB77B525640B4C00386149 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				61CB77AB2562BA9300386149 /* UIViewController+Extension.swift in Sources */,
+				61CB77B825640BBB00386149 /* TheaterViewController.swift in Sources */,
 				61C7FFE3255ACB7100B11544 /* AppDelegate.swift in Sources */,
 				61CB7755255ACE6000386149 /* MovieVO.swift in Sources */,
 				61CB77B22562C2A500386149 /* TheaterListController.swift in Sources */,
