@@ -69,6 +69,11 @@
                                         <constraint firstAttribute="bottomMargin" secondItem="JSM-1O-peE" secondAttribute="bottom" constant="10" id="oPx-cD-wL6"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="contents" destination="stL-Rb-wau" id="Brq-Wy-e2v"/>
+                                    <outlet property="regdate" destination="JSM-1O-peE" id="hrb-ir-0bG"/>
+                                    <outlet property="subject" destination="cxo-me-gaf" id="V9O-PD-IaH"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="memoCellWithImage" rowHeight="85" id="Sl7-dp-THm" customClass="MemoCell" customModule="MyMemory" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="113" width="414" height="85"/>
@@ -126,6 +131,9 @@
                                         <constraint firstItem="voT-cW-34e" firstAttribute="leading" secondItem="Lp3-nS-RLP" secondAttribute="trailing" constant="10" id="xHH-sj-byg"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="img" destination="bgM-jg-AN1" id="SnU-2W-ASL"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -186,16 +194,22 @@
                     </view>
                     <navigationItem key="navigationItem" title="메모 작성" id="BNW-sH-ORe">
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="camera" id="DVa-de-akB"/>
-                            <barButtonItem style="plain" id="Nvl-Wo-mcP">
-                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="WSA-XV-fcr">
-                                    <rect key="frame" x="252.5" y="7" width="92" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="저장"/>
-                                </button>
+                            <barButtonItem systemItem="camera" id="ptf-lz-6oK">
+                                <connections>
+                                    <action selector="pick:" destination="PY4-bh-p4N" id="Rsz-Oh-4vV"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="저장" id="2IV-sD-kUx">
+                                <connections>
+                                    <action selector="save:" destination="PY4-bh-p4N" id="9Gb-z0-vpk"/>
+                                </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="contents" destination="2R3-J1-KI2" id="6UC-2y-5SR"/>
+                        <outlet property="preview" destination="Mq4-I8-FH8" id="fQw-Xz-nXT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3tB-EC-ETM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -220,7 +234,7 @@
         <!--상세 화면-->
         <scene sceneID="cmD-0W-eVQ">
             <objects>
-                <viewController id="YyF-gn-dHO" customClass="MemoReadVC" customModule="MyMemory" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemoRead" id="YyF-gn-dHO" customClass="MemoReadVC" customModule="MyMemory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MLr-bE-vIB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -262,6 +276,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="상세 화면" id="bOP-Ye-Yje"/>
+                    <connections>
+                        <outlet property="contents" destination="LEb-M3-b1b" id="HAA-LK-rSQ"/>
+                        <outlet property="img" destination="jTE-xL-QXB" id="B3q-TN-l8P"/>
+                        <outlet property="subject" destination="os5-2S-3xa" id="lc3-YL-XDE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5z7-zO-BCC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
