@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		612AD457256AC3FF001C5BAF /* CSLogButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612AD456256AC3FF001C5BAF /* CSLogButton.swift */; };
 		61CB7809256426AF00386149 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CB7808256426AF00386149 /* AppDelegate.swift */; };
 		61CB780B256426AF00386149 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CB780A256426AF00386149 /* SceneDelegate.swift */; };
 		61CB7810256426AF00386149 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61CB780E256426AF00386149 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		612AD456256AC3FF001C5BAF /* CSLogButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSLogButton.swift; sourceTree = "<group>"; };
 		61CB7805256426AF00386149 /* MyMemory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMemory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61CB7808256426AF00386149 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61CB780A256426AF00386149 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				61CB78242564338400386149 /* MemoReadVC.swift */,
 				61CB78272564346D00386149 /* MemoCell.swift */,
 				61CB782A2564349800386149 /* MemoData.swift */,
+				612AD456256AC3FF001C5BAF /* CSLogButton.swift */,
 			);
 			path = MyMemory;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				612AD457256AC3FF001C5BAF /* CSLogButton.swift in Sources */,
 				61CB781F2564336800386149 /* MemoListVC.swift in Sources */,
 				61CB78252564338400386149 /* MemoReadVC.swift in Sources */,
 				61CB7809256426AF00386149 /* AppDelegate.swift in Sources */,

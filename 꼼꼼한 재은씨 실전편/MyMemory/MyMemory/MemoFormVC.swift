@@ -17,12 +17,38 @@ class MemoFormVC: UIViewController {
     super.viewDidLoad()
     
     contents.delegate = self
+    let bgImage = UIImage(named: "memo-background.png")!
+    self.view.backgroundColor = UIColor(patternImage: bgImage)
+    
+    contents.layer.borderWidth = 0
+    contents.layer.borderColor = UIColor.clear.cgColor
+    contents.backgroundColor = .clear
+    
+    let style = NSMutableParagraphStyle()
+    style.lineSpacing = 9
+    contents.attributedText = NSAttributedString(string: " ", attributes: [NSAttributedString.Key.paragraphStyle: style])
+    contents.text = ""
+  }
+  
+  override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    let bar = navigationController?.navigationBar
+    
+    let ts = TimeInterval(0.3)
+    UIView.animate(withDuration: ts) {
+      bar?.alpha = (bar?.alpha == 0 ? 1 : 0)
+    }
   }
   
   @IBAction func save(_ sender: Any) {
+    let alertV = UIViewController()
+    let iconImage = UIImage(named: "warning-icon-60")
+    alertV.view = UIImageView(image: iconImage)
+    alertV.preferredContentSize = iconImage?.size ?? CGSize.zero
+    
     guard contents.text?.isEmpty == false else {
       let alert = UIAlertController(title: nil, message: "내용을 입력해주세요", preferredStyle: .alert)
       alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+      alert.setValue(alertV, forKey: "contentViewController")
       self.present(alert, animated: true)
       return
     }

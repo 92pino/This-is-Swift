@@ -19,7 +19,17 @@
                         <view key="tableFooterView" contentMode="scaleToFill" id="FsX-Sb-LBh">
                             <rect key="frame" x="0.0" y="226" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BBo-Pt-YwL" customClass="CSLogButton" customModule="MyMemory" customModuleProvider="target">
+                                    <rect key="frame" x="187.5" y="7" width="39" height="30"/>
+                                    <state key="normal" title="더보기"/>
+                                </button>
+                            </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="BBo-Pt-YwL" firstAttribute="centerY" secondItem="FsX-Sb-LBh" secondAttribute="centerY" id="66C-Lx-76c"/>
+                                <constraint firstItem="BBo-Pt-YwL" firstAttribute="centerX" secondItem="FsX-Sb-LBh" secondAttribute="centerX" id="wZ4-Z6-btN"/>
+                            </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="memoCell" rowHeight="85" id="KR2-Qj-olm" customClass="MemoCell" customModule="MyMemory" customModuleProvider="target">
